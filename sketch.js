@@ -66,6 +66,11 @@ function inDist(p1, p2, d){
   return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y) + (p1.z - p2.z) * (p1.z - p2.z) < d * d;
 }
 
+function nOfFibonacci(x) {
+  let n = parseInt(x, 10);
+  return (!n || n < 1) ? -1 : (n < 3 ? 1 : (nOfFibonacci(n-1) + nOfFibonacci(n-2)));
+}
+
 module.exports = {
   sum: sum,
   sub: sub,
@@ -79,5 +84,6 @@ module.exports = {
   randInt: randInt,
   factorize: factorize,
   Point3D: Point3D,
-  inDist: inDist
+  inDist: inDist,
+  nOfFibonacci: nOfFibonacci
 }

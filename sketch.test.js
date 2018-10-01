@@ -1,4 +1,8 @@
 const { sum, sub, prod, digital_root, sum42, sayHelloTo, anomalyCode, setArray, randInt, factorize, Point3D, inDist } = require('./sketch');
+const { sum, sub, prod, digital_root, sum42, sayHelloTo, anomalyCode, nOfFibonacci } = require('./sketch');
+const fs = require("fs");
+const path = require("path");
+const fetch = require("node-fetch");
 
 // test('adds 1 + 2 to equal 3', () => {
 //   expect(sum(1, 2)).toBe(3);
@@ -114,3 +118,31 @@ test('intDist point (0, 0, 0) and (1, 1, 1) are within distance of 2', () => {
   expect(inDist(new Point3D(0, 0, 0), new Point3D(1, 1, 1), 2)).toBe(true);
 });
 
+test('the 20th number of fibonacci should be 6765', () => {
+  expect(nOfFibonacci(20)).toBe(6765);
+})
+
+const testUrlInMarkdown = (file) => {
+  let markdown = fs.readFileSync(file).toString();
+  let urls = [];
+  let regExp = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let result = null;
+  while (result = regExp.exec(markdown)) urls.push(result[2]);
+  return [urls.length, async () => {
+    for (let url of urls) {
+      if (url.includes("://") && !url.split("://")[0].includes("/")) {
+        // An External url
+        let res = await fetch(url);
+        if (![200, 301, 302].includes(res.status)) throw new Error(`External Link Test: ${url} with bad response code ${res.status}`);
+      } else {
+        if (!fs.existsSync(path.join(path.dirname(file), url))) throw new Error(`Internal Link Test: ${url} with not found error`);
+      }
+    }
+  }];
+}
+
+it('tests url avaliability in README.md', async () => {
+  let [testCount, testFunc] = testUrlInMarkdown("README.md");
+  jest.setTimeout(testCount * 5000);
+  return await testFunc();
+});
