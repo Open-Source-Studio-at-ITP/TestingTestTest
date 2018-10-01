@@ -17,5 +17,13 @@
   "license": "MIT",
   "devDependencies": {
     "jest": "^22.1.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js6450/UnitTestingCI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/js6450/UnitTestingCI/issues"
+  },
+  "homepage": "https://github.com/js6450/UnitTestingCI#readme"
 }
