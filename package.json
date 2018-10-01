@@ -20,10 +20,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/js6450/UnitTestingCI.git"
+    "url": "git+https://github.com/Open-Source-Studio-at-ITP/UnitTestingCI.git"
   },
   "bugs": {
-    "url": "https://github.com/js6450/UnitTestingCI/issues"
+    "url": "https://github.com/jOpen-Source-Studio-at-ITP/UnitTestingCI/issues"
   },
-  "homepage": "https://github.com/js6450/UnitTestingCI#readme"
+  "homepage": "https://github.com/Open-Source-Studio-at-ITP/UnitTestingCI#readme"
 }
