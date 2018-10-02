@@ -1,4 +1,4 @@
-const { sum, sub, prod, digital_root, sum42, sayHelloTo, anomalyCode, fahrenheit2Celcius, power, nOfFibonacci, shuffleArray, iThink } = require('./sketch');
+const { sum, sub, prod, digital_root, sum42, sayHelloTo, anomalyCode, fahrenheit2Celcius, power, nOfFibonacci, inchesToCm, shuffleArray, iThink } = require('./sketch');
 
 const fs = require("fs");
 const path = require("path");
@@ -116,6 +116,11 @@ test('power of one number', () => {
 
 test('the 20th number of fibonacci should be 6765', () => {
   expect(nOfFibonacci(20)).toBe(6765);
+})
+
+// inchesToCm
+test('testing inches to cm', () => {
+  expect(inchesToCm(10)).toBe(25.4);
 })
 
 test('I think...', () => {
