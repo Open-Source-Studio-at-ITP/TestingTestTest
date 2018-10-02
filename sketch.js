@@ -73,6 +73,10 @@ function shuffleArray(array) {
   return new_array;
 }
 
+function iThink(thisThing, thatThing) {
+  return "I think " + thisThing + " but " + thatThing + ".";
+}
+
 module.exports = {
   sum: sum,
   sub: sub,
@@ -85,5 +89,6 @@ module.exports = {
   fahrenheit2Celcius: fahrenheit2Celcius,
   power: power,
   nOfFibonacci: nOfFibonacci,
-  shuffleArray: shuffleArray
+  shuffleArray: shuffleArray,
+  iThink: iThink
 }
