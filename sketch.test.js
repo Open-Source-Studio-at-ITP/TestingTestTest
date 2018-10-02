@@ -1,4 +1,4 @@
-const { sum, sub, prod, digital_root, sum42, sayHelloTo, anomalyCode, power, nOfFibonacci } = require('./sketch');
+const { sum, sub, prod, digital_root, sum42, sayHelloTo, anomalyCode, power, nOfFibonacci, shuffleArray } = require('./sketch');
 const fs = require("fs");
 const path = require("path");
 const fetch = require("node-fetch");
@@ -128,4 +128,32 @@ it('tests url avaliability in README.md', async () => {
   let [testCount, testFunc] = testUrlInMarkdown("README.md");
   jest.setTimeout(testCount * 5000);
   return await testFunc();
+});
+
+test('shuffleArray function exists', () => {
+  expect(shuffleArray).toBeDefined();
+});
+
+test('randomly created and shuffled arrays should be different from the original', () => {
+  const masterArray = [];
+  const resultsArray = [];
+  for ( let i=0; i<10; i++ ){
+    let array = [];
+    // random length between 10 and 30
+    let len = Math.floor( Math.random()*20 + 10 );
+    // add random values between 10 and 110
+    for ( let j=0; j<len; j++ ) {
+      array[j] = Math.floor( Math.random()*100 + 10 );
+    }
+    masterArray.push( array );
+    let shuffled = shuffleArray(array);
+    resultsArray.push( shuffled );
+
+    // shuffle the array and expect it:
+    // - have same length
+    expect( shuffled.length ).toBe( array.length );
+  }
+
+  // shuffled arrays must have at least one that is different from the original
+  expect( resultsArray ).not.toBe( masterArray );
 });
