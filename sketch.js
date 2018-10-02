@@ -1,3 +1,5 @@
+// adding something to see if it will force a build
+
 function sum(a, b) {
   return a + b;
 }
@@ -29,6 +31,10 @@ function anomalyCode(x) {
   return '5' + x - x;
 }
 
+
+function fahrenheit2Celcius(F) {
+  return (F - 32) * 5 / 9;
+}
 function anomalyCode(x) {
   return '5' + x - x;
 }
@@ -76,6 +82,7 @@ module.exports = {
   sayHelloTo: sayHelloTo,
   answer: answer,
   anomalyCode: anomalyCode,
+  fahrenheit2Celcius: fahrenheit2Celcius,
   power: power,
   nOfFibonacci: nOfFibonacci,
   shuffleArray: shuffleArray

@@ -1,4 +1,5 @@
-const { sum, sub, prod, digital_root, sum42, sayHelloTo, anomalyCode, power, nOfFibonacci, shuffleArray } = require('./sketch');
+const { sum, sub, prod, digital_root, sum42, sayHelloTo, anomalyCode, fahrenheit2Celcius, power, nOfFibonacci, shuffleArray } = require('./sketch');
+
 const fs = require("fs");
 const path = require("path");
 const fetch = require("node-fetch");
@@ -95,6 +96,18 @@ test('anomalyCode hundred should be 5000', () => {
 
 test('anomalyCode thousand should be 50000', () => {
   expect(anomalyCode(7891)).toBe(50000);
+})
+
+test('fahrenheit2Celcius function exists', () => {
+  expect(fahrenheit2Celcius(1)).toBeDefined();
+})
+
+test('fahrenheit2Celcius 32 F should be 0 C', () => {
+  expect(fahrenheit2Celcius(32)).toBe(0);
+})
+
+test('fahrenheit2Celcius 50 F should be 10 C', () => {
+  expect(fahrenheit2Celcius(50)).toBe(10);
 })
 
 test('power of one number', () => {
