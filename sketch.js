@@ -92,3 +92,8 @@ module.exports = {
   shuffleArray: shuffleArray,
   iThink: iThink
 }
+
+function milesToKilometers (miles) {
+if (miles != null)
+ return miles / 1.609344;
+}

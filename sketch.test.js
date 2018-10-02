@@ -110,6 +110,10 @@ test('fahrenheit2Celcius 50 F should be 10 C', () => {
   expect(fahrenheit2Celcius(50)).toBe(10);
 })
 
+test('milesToKilometers 1 miles should be 1.609344 kilometeres', () => {
+  expect(milesToKilometers(10)).toBe(16.09344i);
+})
+
 test('power of one number', () => {
   expect(power(2, 2)).toBe(4);
 })
