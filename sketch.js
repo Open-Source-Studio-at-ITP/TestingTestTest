@@ -48,6 +48,10 @@ function nOfFibonacci(x) {
   return (!n || n < 1) ? -1 : (n < 3 ? 1 : (nOfFibonacci(n-1) + nOfFibonacci(n-2)));
 }
 
+function inchesToCm(x){
+  return(x*2.54);
+}
+
 // shuffle an array using the Fisher-Yates algorithm
 // retyped from https://stackoverflow.com/a/6274398
 function shuffleArray(array) {
@@ -89,6 +93,7 @@ module.exports = {
   fahrenheit2Celcius: fahrenheit2Celcius,
   power: power,
   nOfFibonacci: nOfFibonacci,
+  inchesToCm: inchesToCm,
   shuffleArray: shuffleArray,
   iThink: iThink
 }
