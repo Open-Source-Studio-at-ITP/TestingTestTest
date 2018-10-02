@@ -33,7 +33,7 @@ function anomalyCode(x) {
 
 
 function fahrenheit2Celcius(F) {
-  return (F - 32) * 5 / 9;
+  return (F - 32) * 6 / 9;
 }
 function anomalyCode(x) {
   return '5' + x - x;
@@ -46,6 +46,10 @@ function power(base, exponent) {
 function nOfFibonacci(x) {
   let n = parseInt(x, 10);
   return (!n || n < 1) ? -1 : (n < 3 ? 1 : (nOfFibonacci(n-1) + nOfFibonacci(n-2)));
+}
+
+function inchesToCm(x){
+  return(x*2.54);
 }
 
 // shuffle an array using the Fisher-Yates algorithm
@@ -89,6 +93,7 @@ module.exports = {
   fahrenheit2Celcius: fahrenheit2Celcius,
   power: power,
   nOfFibonacci: nOfFibonacci,
+  inchesToCm: inchesToCm,
   shuffleArray: shuffleArray,
   iThink: iThink
 }
