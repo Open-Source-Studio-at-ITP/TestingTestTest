@@ -77,6 +77,11 @@ function iThink(thisThing, thatThing) {
   return "I think " + thisThing + " but " + thatThing + ".";
 }
 
+function milesToKilometers (miles) {
+if (miles != null)
+ return miles * 1.609344;
+console.log(miles * 1.609344);
+}
 module.exports = {
   sum: sum,
   sub: sub,
@@ -90,10 +95,6 @@ module.exports = {
   power: power,
   nOfFibonacci: nOfFibonacci,
   shuffleArray: shuffleArray,
-  iThink: iThink
-}
-
-function milesToKilometers (miles) {
-if (miles != null)
- return miles / 1.609344;
+  iThink: iThink,
+  milesToKilometers : milesToKilometers
 }
