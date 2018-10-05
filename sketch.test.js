@@ -1,4 +1,19 @@
-const { sum, sub, prod, digital_root, sum42, milesToKilometers, sayHelloTo, anomalyCode, fahrenheit2Celcius, power, nOfFibonacci, shuffleArray, iThink } = require('./sketch');
+const {
+  sum,
+  sub,
+  prod,
+  digital_root,
+  sum42,
+  milesToKilometers,
+  sayHelloTo,
+  anomalyCode,
+  fahrenheit2Celcius,
+  power,
+  nOfFibonacci,
+  shuffleArray,
+  iThink,
+  repeatAction
+} = require('./sketch');
 
 const fs = require("fs");
 const path = require("path");
@@ -38,7 +53,7 @@ test('sayHelloTo Dan should be Hello, Dan!', () => {
  * Prod to be defined
  */
 
-test('Prod function exists',()=>{
+test('Prod function exists', () => {
   expect(prod).toBeDefined();
 });
 
@@ -54,9 +69,9 @@ test('prod calculates 2 * 10 = 20', () => {
  * Digital Root to be defined
  */
 
- test('digital_root function exists', ()=>{
+test('digital_root function exists', () => {
   expect('digital_root').toBeDefined();
- });
+});
 
 test('digital root of 265 should equal 4', () => {
   expect(digital_root(265)).toBe(4);
@@ -75,7 +90,7 @@ test('Sub function exists', () => {
 })
 
 test('Sub 10 - 3 should be 7', () => {
-  expect(sub(10,3)).toBe(7);
+  expect(sub(10, 3)).toBe(7);
 })
 
 test('anomalyCode function exists', () => {
@@ -158,23 +173,27 @@ test('shuffleArray function exists', () => {
 test('randomly created and shuffled arrays should be different from the original', () => {
   const masterArray = [];
   const resultsArray = [];
-  for ( let i=0; i<10; i++ ){
+  for (let i = 0; i < 10; i++) {
     let array = [];
     // random length between 10 and 30
-    let len = Math.floor( Math.random()*20 + 10 );
+    let len = Math.floor(Math.random() * 20 + 10);
     // add random values between 10 and 110
-    for ( let j=0; j<len; j++ ) {
-      array[j] = Math.floor( Math.random()*100 + 10 );
+    for (let j = 0; j < len; j++) {
+      array[j] = Math.floor(Math.random() * 100 + 10);
     }
-    masterArray.push( array );
+    masterArray.push(array);
     let shuffled = shuffleArray(array);
-    resultsArray.push( shuffled );
+    resultsArray.push(shuffled);
 
     // shuffle the array and expect it:
     // - have same length
-    expect( shuffled.length ).toBe( array.length );
+    expect(shuffled.length).toBe(array.length);
   }
 
   // shuffled arrays must have at least one that is different from the original
-  expect( resultsArray ).not.toBe( masterArray );
+  expect(resultsArray).not.toBe(masterArray);
+});
+
+test('Repeating an action', () => {
+  expect(repeatAction(2, Math.sqrt)).toEqual([0, 1]);
 });

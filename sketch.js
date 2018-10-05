@@ -4,11 +4,11 @@ function sum(a, b) {
   return a + b;
 }
 
-function sayHelloTo(username){
+function sayHelloTo(username) {
   return "Hello, " + username + "!";
 }
 
-function sub(a, b){
+function sub(a, b) {
   return a - b;
 }
 
@@ -21,8 +21,9 @@ function answer() {
 }
 
 function digital_root(n) {
-  return (n-1)%9+1;
+  return (n - 1) % 9 + 1;
 }
+
 function sum42(a, b) {
   return a + b + 42;
 }
@@ -35,6 +36,7 @@ function anomalyCode(x) {
 function fahrenheit2Celcius(F) {
   return (F - 32) * 5 / 9;
 }
+
 function anomalyCode(x) {
   return '5' + x - x;
 }
@@ -45,7 +47,7 @@ function power(base, exponent) {
 
 function nOfFibonacci(x) {
   let n = parseInt(x, 10);
-  return (!n || n < 1) ? -1 : (n < 3 ? 1 : (nOfFibonacci(n-1) + nOfFibonacci(n-2)));
+  return (!n || n < 1) ? -1 : (n < 3 ? 1 : (nOfFibonacci(n - 1) + nOfFibonacci(n - 2)));
 }
 
 // shuffle an array using the Fisher-Yates algorithm
@@ -57,9 +59,9 @@ function shuffleArray(array) {
   let currentIndex = array.length;
 
   // while we still have elements to shuffle
-  while ( currentIndex > 0 ) {
+  while (currentIndex > 0) {
     // pick a random element (from the remaining ones)
-    let randomIndex = Math.floor( Math.random() * currentIndex );
+    let randomIndex = Math.floor(Math.random() * currentIndex);
     // move the index
     currentIndex -= 1;
     // we hold the value we're going to replace
@@ -77,11 +79,25 @@ function iThink(thisThing, thatThing) {
   return "I think " + thisThing + " but " + thatThing + ".";
 }
 
-function milesToKilometers (miles) {
-if (miles != null)
- return miles * 1.609344;
-console.log(miles * 1.609344);
+function milesToKilometers(miles) {
+  if (miles != null)
+    return miles * 1.609344;
+  console.log(miles * 1.609344);
 }
+
+//This function repeats a function n times
+//It takes 2 parameters:
+//n - number of repetition
+//action - an action is a function you want to repeat
+
+function repeatAction(n, action) {
+  let results = [];
+  for (let i = 0; i < n; i++) {
+    results.push(action(i));
+  }
+  return results;
+}
+
 module.exports = {
   sum: sum,
   sub: sub,
@@ -96,5 +112,6 @@ module.exports = {
   nOfFibonacci: nOfFibonacci,
   shuffleArray: shuffleArray,
   iThink: iThink,
-  milesToKilometers : milesToKilometers
+  milesToKilometers: milesToKilometers,
+  repeatAction: repeatAction
 }
