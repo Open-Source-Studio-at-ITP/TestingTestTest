@@ -82,6 +82,11 @@ if (miles != null)
  return miles * 1.609344;
 console.log(miles * 1.609344);
 }
+
+function loveMy(myLove) {
+  return "I don't like my " + myLove + "<3";
+}
+
 module.exports = {
   sum: sum,
   sub: sub,
@@ -96,5 +101,6 @@ module.exports = {
   nOfFibonacci: nOfFibonacci,
   shuffleArray: shuffleArray,
   iThink: iThink,
-  milesToKilometers : milesToKilometers
+  milesToKilometers : milesToKilometers,
+  loveMy: loveMy
 }
