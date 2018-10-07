@@ -1,4 +1,4 @@
-const { sum, sub, prod, digital_root, sum42, milesToKilometers, sayHelloTo, anomalyCode, fahrenheit2Celcius, power, nOfFibonacci, shuffleArray, iThink } = require('./sketch');
+const { sum, sub, prod, digital_root, sum42, milesToKilometers, sayHelloTo, anomalyCode, fahrenheit2Celcius, power, nOfFibonacci, shuffleArray, iThink, loveMy } = require('./sketch');
 
 const fs = require("fs");
 const path = require("path");
@@ -178,3 +178,7 @@ test('randomly created and shuffled arrays should be different from the original
   // shuffled arrays must have at least one that is different from the original
   expect( resultsArray ).not.toBe( masterArray );
 });
+
+test('Love function exists', () => {
+  expect(loveMy("burger")).toBe("I love my burger<3");
+})
