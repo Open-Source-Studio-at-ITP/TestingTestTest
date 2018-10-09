@@ -8,6 +8,8 @@ This repo is forked from [CodingTrain/TestingTestTest](https://github.com/Coding
 
 Students may also experiment with [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/), and [TravisCI](https://travis-ci.org/) in the [Playground](https://github.com/Open-Source-Studio-at-ITP/Playground/).
 
+### Demonstrating a merge conflict 1.
+* Hello merge conflict.
 
 ### Running the tests
 1. Install [node.js](https://nodejs.org/en/)
